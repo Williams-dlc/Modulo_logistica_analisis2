@@ -1,0 +1,7 @@
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaLogicaPolizaLogistica\bin\Debug\CapaLogicaPolizaLogistica.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaLogicaPolizaLogistica\bin\Debug\CapaLogicaPolizaLogistica.pdb
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaLogicaPolizaLogistica\obj\Debug\CapaLogicaPolizaLogistica.csprojResolveAssemblyReference.cache
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaLogicaPolizaLogistica\obj\Debug\CapaLogicaPolizaLogistica.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaLogicaPolizaLogistica\obj\Debug\CapaLogicaPolizaLogistica.pdb
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaLogicaPolizaLogistica\bin\Debug\CapaDatosPolizaLogistica.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaLogicaPolizaLogistica\bin\Debug\CapaDatosPolizaLogistica.pdb
