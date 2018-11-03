@@ -1,0 +1,19 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=AyudaPolizas.chm
+Contents file=Contenido.hhc
+Default Window=Ventanas
+Default topic=AyudaPolizaLogistica.html
+Display compile progress=No
+Index file=index.hhk
+Language=0x100a Spanish (Guatemala)
+
+[WINDOWS]
+Ventanas=,"Contenido.hhc","index.hhk","AyudaPolizaLogistica.html","AyudaPolizaLogistica.html",,,,,0x3420,,0x3006,,,,,,,,0
+
+
+[FILES]
+AyudaPolizaLogistica.html
+
+[INFOTYPES]
+
