@@ -1,0 +1,4 @@
+c:\users\andrés\documents\visual studio 2015\Projects\ModuloTransporte\CapaLogica\bin\Debug\CapaLogica.dll
+c:\users\andrés\documents\visual studio 2015\Projects\ModuloTransporte\CapaLogica\bin\Debug\CapaLogica.pdb
+c:\users\andrés\documents\visual studio 2015\Projects\ModuloTransporte\CapaLogica\obj\Debug\CapaLogica.dll
+c:\users\andrés\documents\visual studio 2015\Projects\ModuloTransporte\CapaLogica\obj\Debug\CapaLogica.pdb

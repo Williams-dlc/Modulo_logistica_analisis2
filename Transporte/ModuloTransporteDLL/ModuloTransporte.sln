@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuloTransporte", "ModuloTransporte\ModuloTransporte.csproj", "{7B0D18E6-6E09-4EEE-AFBA-1532388640EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{09DA6807-2006-4537-A669-9CFB595B4A7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "CapaLogica\CapaLogica.csproj", "{67441BD9-1E64-42E7-8520-561A6E00E5F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B0D18E6-6E09-4EEE-AFBA-1532388640EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B0D18E6-6E09-4EEE-AFBA-1532388640EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B0D18E6-6E09-4EEE-AFBA-1532388640EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B0D18E6-6E09-4EEE-AFBA-1532388640EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09DA6807-2006-4537-A669-9CFB595B4A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09DA6807-2006-4537-A669-9CFB595B4A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09DA6807-2006-4537-A669-9CFB595B4A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09DA6807-2006-4537-A669-9CFB595B4A7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67441BD9-1E64-42E7-8520-561A6E00E5F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67441BD9-1E64-42E7-8520-561A6E00E5F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67441BD9-1E64-42E7-8520-561A6E00E5F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67441BD9-1E64-42E7-8520-561A6E00E5F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
