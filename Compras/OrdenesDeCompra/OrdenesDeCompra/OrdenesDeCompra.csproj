@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A83072F3-B478-40DB-AAF9-8F93023AE90B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrdenesDeCompra</RootNamespace>
+    <AssemblyName>OrdenesDeCompra</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CapaDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\PROYECTOGENERAL\PROGRA\navegador y prueba\Navegador\CapaDiseno\bin\Debug\CapaDiseno.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaLogica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="ConsultasInteligentes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="DLL- Reporteador, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="PlantillaForms">
+      <HintPath>..\..\..\Plantilla\PlantillaForms\PlantillaForms\bin\Debug\PlantillaForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CapaDatos\CapaDatosCompras.cs" />
+    <Compile Include="CapaInterfaz\InterfazConsultaOrdenesDeDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazConsultaOrdenesDeDevolucion.Designer.cs">
+      <DependentUpon>InterfazConsultaOrdenesDeDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazConsultaOrdenesDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazConsultaOrdenesDeCompra.Designer.cs">
+      <DependentUpon>InterfazConsultaOrdenesDeCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSeleccionDetalleOrdenDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSeleccionDetalleOrdenDeCompra.Designer.cs">
+      <DependentUpon>InterfazSeleccionDetalleOrdenDeCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSeleccionDetalleOrdenDeDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSeleccionDetalleOrdenDeDevolucion.Designer.cs">
+      <DependentUpon>InterfazSeleccionDetalleOrdenDeDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSolicitudDeDevoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSolicitudDeDevoluciones.Designer.cs">
+      <DependentUpon>InterfazSolicitudDeDevoluciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSolicitudOrdenesDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSolicitudOrdenesDeCompra.Designer.cs">
+      <DependentUpon>InterfazSolicitudOrdenesDeCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CapaLogica\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CapaInterfaz\InterfazConsultaOrdenesDeDevolucion.resx">
+      <DependentUpon>InterfazConsultaOrdenesDeDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaInterfaz\InterfazConsultaOrdenesDeCompra.resx">
+      <DependentUpon>InterfazConsultaOrdenesDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaInterfaz\InterfazSeleccionDetalleOrdenDeCompra.resx">
+      <DependentUpon>InterfazSeleccionDetalleOrdenDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaInterfaz\InterfazSeleccionDetalleOrdenDeDevolucion.resx">
+      <DependentUpon>InterfazSeleccionDetalleOrdenDeDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaInterfaz\InterfazSolicitudDeDevoluciones.resx">
+      <DependentUpon>InterfazSolicitudDeDevoluciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaInterfaz\InterfazSolicitudOrdenesDeCompra.resx">
+      <DependentUpon>InterfazSolicitudOrdenesDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trashes_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_32x32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
