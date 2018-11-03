@@ -1,0 +1,15 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=ayuda.chm
+Contents file=contenidos.hhc
+Default topic=Ayuda.html
+Display compile progress=No
+Index file=indice.hhk
+Language=0xc0a Español (España, internacional)
+
+
+[FILES]
+Ayuda.html
+
+[INFOTYPES]
+
