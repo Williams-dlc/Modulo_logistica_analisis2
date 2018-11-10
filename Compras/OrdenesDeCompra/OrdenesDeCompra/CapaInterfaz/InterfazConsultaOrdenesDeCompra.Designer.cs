@@ -44,6 +44,7 @@
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -88,18 +89,20 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(51, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(500, 39);
+            this.label1.Size = new System.Drawing.Size(455, 39);
             this.label1.TabIndex = 38;
-            this.label1.Text = "Solicitud de Orden de Compra";
+            this.label1.Text = "Consulta Orden de Compra";
             // 
             // InterfazConsultaOrdenesDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(933, 700);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "InterfazConsultaOrdenesDeCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.InterfazConsultaOrdenesDeCompra_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);

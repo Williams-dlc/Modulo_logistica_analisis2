@@ -32,11 +32,20 @@
   <ItemGroup>
     <Reference Include="CapaDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\PROYECTOGENERAL\PROGRA\navegador y prueba\Navegador\CapaDiseno\bin\Debug\CapaDiseno.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Navegador, prueba, script - version 1.0.1.2 final este si\Navegador\CapaDiseno\bin\Debug\CapaDiseno.dll</HintPath>
     </Reference>
-    <Reference Include="CapaLogica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Reference Include="ConsultasInteligentes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Reference Include="DLL- Reporteador, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="CapaLogica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Navegador, prueba, script - version 1.0.1.2 final este si\Navegador\CapaDiseno\bin\Debug\CapaLogica.dll</HintPath>
+    </Reference>
+    <Reference Include="ConsultasInteligentes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Navegador, prueba, script - version 1.0.1.2 final este si\Navegador\CapaDiseno\bin\Debug\ConsultasInteligentes.dll</HintPath>
+    </Reference>
+    <Reference Include="DLL- Reporteador, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Navegador, prueba, script - version 1.0.1.2 final este si\Navegador\CapaDiseno\bin\Debug\DLL- Reporteador.dll</HintPath>
+    </Reference>
     <Reference Include="PlantillaForms">
       <HintPath>..\..\..\Plantilla\PlantillaForms\PlantillaForms\bin\Debug\PlantillaForms.dll</HintPath>
     </Reference>
@@ -53,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapaDatos\CapaDatosCompras.cs" />
+    <Compile Include="CapaInterfaz\InterfazConsultaCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazConsultaCotizaciones.Designer.cs">
+      <DependentUpon>InterfazConsultaCotizaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaInterfaz\InterfazConsultaOrdenesDeDevolucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +91,12 @@
     </Compile>
     <Compile Include="CapaInterfaz\InterfazSeleccionDetalleOrdenDeDevolucion.Designer.cs">
       <DependentUpon>InterfazSeleccionDetalleOrdenDeDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSolicitudCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaInterfaz\InterfazSolicitudCotizaciones.Designer.cs">
+      <DependentUpon>InterfazSolicitudCotizaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaInterfaz\InterfazSolicitudDeDevoluciones.cs">
       <SubType>Form</SubType>
@@ -101,6 +122,9 @@
     <Folder Include="CapaLogica\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CapaInterfaz\InterfazConsultaCotizaciones.resx">
+      <DependentUpon>InterfazConsultaCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaInterfaz\InterfazConsultaOrdenesDeDevolucion.resx">
       <DependentUpon>InterfazConsultaOrdenesDeDevolucion.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaInterfaz\InterfazSeleccionDetalleOrdenDeDevolucion.resx">
       <DependentUpon>InterfazSeleccionDetalleOrdenDeDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaInterfaz\InterfazSolicitudCotizaciones.resx">
+      <DependentUpon>InterfazSolicitudCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaInterfaz\InterfazSolicitudDeDevoluciones.resx">
       <DependentUpon>InterfazSolicitudDeDevoluciones.cs</DependentUpon>
