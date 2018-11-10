@@ -1,0 +1,6 @@
+MySQL ODBC 3.51 Driver
+104.154.63.216
+BdColchoneria
+pruebas
+umg
+
