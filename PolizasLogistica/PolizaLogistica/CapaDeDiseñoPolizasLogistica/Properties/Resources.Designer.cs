@@ -113,6 +113,16 @@ namespace CapaDeDiseñoPolizasLogistica.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Search_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Search_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap transportadora {
             get {
                 object obj = ResourceManager.GetObject("transportadora", resourceCulture);

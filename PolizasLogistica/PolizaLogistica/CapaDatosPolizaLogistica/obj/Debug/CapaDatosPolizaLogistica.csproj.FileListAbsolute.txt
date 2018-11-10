@@ -3,3 +3,7 @@ D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\Poliza
 D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaDatosPolizaLogistica\bin\Debug\CapaDatosPolizaLogistica.pdb
 D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaDatosPolizaLogistica\obj\Debug\CapaDatosPolizaLogistica.dll
 D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaDatosPolizaLogistica\obj\Debug\CapaDatosPolizaLogistica.pdb
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaDatosPolizaLogistica\bin\Debug\CapaDeDiseñoPolizasLogistica.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaDatosPolizaLogistica\bin\Debug\CapaLogicaPolizaLogistica.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaDatosPolizaLogistica\bin\Debug\CapaDeDiseñoPolizasLogistica.pdb
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\PolizaLogistica\CapaDatosPolizaLogistica\bin\Debug\CapaLogicaPolizaLogistica.pdb

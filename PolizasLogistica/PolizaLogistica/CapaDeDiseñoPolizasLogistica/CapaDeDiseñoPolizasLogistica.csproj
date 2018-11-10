@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BIT">
+      <HintPath>..\..\..\Cuarta Entrega\BIT\BIT\bin\Debug\BIT.dll</HintPath>
+    </Reference>
     <Reference Include="CapaDatosPolizaLogistica">
       <HintPath>..\CapaDatosPolizaLogistica\bin\Debug\CapaDatosPolizaLogistica.dll</HintPath>
     </Reference>
@@ -38,6 +41,15 @@
     </Reference>
     <Reference Include="CapaLogicaPolizaLogistica">
       <HintPath>..\CapaLogicaPolizaLogistica\bin\Debug\CapaLogicaPolizaLogistica.dll</HintPath>
+    </Reference>
+    <Reference Include="Data">
+      <HintPath>..\..\..\Cuarta Entrega\BIT\BIT\bin\Debug\Data.dll</HintPath>
+    </Reference>
+    <Reference Include="InicioSesion">
+      <HintPath>..\..\..\Cuarta Entrega\BIT\BIT\bin\Debug\InicioSesion.dll</HintPath>
+    </Reference>
+    <Reference Include="Logic">
+      <HintPath>..\..\..\Cuarta Entrega\BIT\BIT\bin\Debug\Logic.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -94,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Save_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

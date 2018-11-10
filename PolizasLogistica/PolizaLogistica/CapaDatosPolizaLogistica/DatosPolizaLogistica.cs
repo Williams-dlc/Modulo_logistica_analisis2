@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Data.Odbc;
 using System.Data;
 using System.Windows.Forms;
-
+using CapaDeDiseñoPolizasLogistica;
+using System.IO;
 
 
 namespace CapaDatosPolizaLogistica
@@ -14,20 +15,30 @@ namespace CapaDatosPolizaLogistica
     public class DatosPolizaLogistica
     {
         //Insertar datos en encabezado
-        public void InsertarDatosDePoliza(string id, string fecha)
+        public void InsertarDatosDePoliza(string id, string fecha, string tipo)
         {
             try
             {
                 using (var conn = new OdbcConnection("dsn=colchoneria"))
                 {
+                    //OdbcDataReader Reader;
                     conn.Open();
 
                     {
+
                         using (var cmd = conn.CreateCommand())
                         {
-                            cmd.CommandText = "INSERT INTO TBL_encabezado_poliza(id_Poliza, Fecha_Actual_Poliza, Total_Poliza, estatus) VALUES('" + id + "','" + fecha + "',0,0)";
+                            //Insertar datos a tabla TBL_encabezado_poliza
+
+                            /*string total = ("SELECT SUM(Total) FROM TBL_Detalle_Doc_Inventario".ToString());
+                            cmd.CommandText = "SELECT SUM(Total) FROM TBL_Detalle_Doc_Inventario".ToString();
+                            double doble = Convert.ToDouble(total);
+                            decimal valdec = Convert.ToDecimal(doble);*/
+                            //cmd.CommandText = "INSERT INTO TBL_encabezado_poliza(id_Poliza, Fecha_Actual_Poliza, Total_Poliza, Tipo_Poliza, estatus) VALUES('" + id + "','" + fecha + "' , '"+ valdec + "' , '"+ tipo + "',0)";
+                            cmd.CommandText = "INSERT INTO TBL_encabezado_poliza_Logistica(id_Poliza, Fecha_Actual_Poliza, Total_Poliza, Tipo_Poliza, estatus) VALUES('" + id + "','" + fecha + "',0,'" + tipo + "',0)";
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Ingresado Exitosamente");
+                            MessageBox.Show("Encabezado de poliza creado exitosamente");
+
                         }
                     }
                     conn.Close();
@@ -40,7 +51,7 @@ namespace CapaDatosPolizaLogistica
         }
 
         //Datos del detalle
-        public DataSet ConsultarDatosDePoliza()
+        public DataSet ConsultarDatos(string inicio, string fin)
         {
             DataSet ds = new DataSet();
             try
@@ -52,18 +63,17 @@ namespace CapaDatosPolizaLogistica
                     {
                         using (var cmd = conn.CreateCommand())
                         {
-                            cmd.CommandText = "";
+                            cmd.CommandText = "SELECT * FROM TBL_Enc_Doc_Inventario WHERE fecha  between '" + inicio + "' and FECHA  <=  '" + fin + "' UNION SELECT ";
+                            //cmd.CommandText =
                             OdbcDataAdapter m_datos = new OdbcDataAdapter(cmd);
                             ds = new DataSet();
                             m_datos.Fill(ds);
-                        }
-
-                        /*
-                         SELECT Tipo_Operacion FROM TBL_operaciones_inventario 
-UNION
-
-ORDER BY ;
+                            //Dgv_Poliza.DataSource = ds.Tables[0];
+                            /*
+           cmd.CommandText = "SELECT * FROM TBL_Enc_Doc_Inventario WHERE FECHA >= '" & DateTimePicker1.Value.ToString("yyyyMMdd") & "' and FECHA  <=  '" & DateTimePicker2.Value.ToString("yyyyMMdd") & "'";
+                               
                          */
+                        }
                     }
                     conn.Close();
                 }
@@ -75,27 +85,24 @@ ORDER BY ;
             return ds;
         }
 
-        public string[] cargarDatos1(string usuario)
+
+        public DataSet DatosDetalle()
         {
-            string[] datos;
-            datos = new string[3];
+            //Mostrar datos de detalle
+            DataSet ds = new DataSet();
             try
             {
                 using (var conn = new OdbcConnection("dsn=colchoneria"))
                 {
-                    OdbcDataReader Reader;
                     conn.Open();
+
                     {
                         using (var cmd = conn.CreateCommand())
                         {
-                            cmd.CommandText = "'" + usuario + "'";
-                            Reader = cmd.ExecuteReader();
-                            while (Reader.Read())
-                            {
-                                datos[0] = (Reader["usu_nickname"].ToString());
-                                datos[1] = (Reader["usu_password"].ToString());
-                                datos[2] = (Reader["usu_estado"].ToString());
-                            }
+                            cmd.CommandText = "SELECT Id_Detalle_Poliza as ID_Detalle, Nombre_Cuenta_DP as Nombre_De_Cuenta, Cargo_detalle_poliza as Cargo, Abono_detalle_poliza as Abono, id_poliza as Numero_Poliza FROM TBL_detalle_poliza_Logistica";
+                            OdbcDataAdapter m_datos = new OdbcDataAdapter(cmd);
+                            ds = new DataSet();
+                            m_datos.Fill(ds);
                         }
                     }
                     conn.Close();
@@ -103,9 +110,10 @@ ORDER BY ;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "ERROR");
+                MessageBox.Show(ex.ToString());
             }
-            return datos;
+            return ds;
         }
+
     }
 }

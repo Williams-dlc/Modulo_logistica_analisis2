@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatosPolizaLogistica;
 using CapaLogicaPolizaLogistica;
+using System.IO;
+using BIT;
 
 namespace CapaDeDiseñoPolizasLogistica
 {
-    public partial class Btn_Enviar : Form
+    public partial class FormGenerarPoliza : Form
     {
-        public Btn_Enviar()
+        public FormGenerarPoliza()
         {
             InitializeComponent();
         }
@@ -24,12 +26,14 @@ namespace CapaDeDiseñoPolizasLogistica
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormGenerarPoliza_Load(object sender, EventArgs e)
         {
-           /* DataSet ds;
+            
+            DataSet ds;
             DatosPolizaLogistica dmu = new DatosPolizaLogistica();
-            ds = dmu.ConsultarDatosDePoliza();
-            dataGridView1.DataSource = ds.Tables[0];*/
+            ds = dmu.DatosDetalle();
+            Dgv_Poliza.DataSource = ds.Tables[0];
+            
         }
 
         private void Btn_Minimizar_Click(object sender, EventArgs e)
@@ -61,9 +65,17 @@ namespace CapaDeDiseñoPolizasLogistica
         {
             //Guardad
             LogicaPolizaLogistica lmu = new LogicaPolizaLogistica();
-            lmu.ValidarInsertarDatosPoliza(Txt_id.Text, DTP_fecha.Value.ToString("yyyyMMdd"));
-           // clean();
+            lmu.ValidarInsertarDatosPoliza(Txt_id.Text, Dtp_fecha.Value.ToString("yyyyMMdd"), Txt_Tipo.Text);
             //Fin guardar
+        }
+
+        private void Btn_Buscar_Click(object sender, EventArgs e)
+        {
+            //Mostrar datos en DataGrid
+            DataSet ds;
+            DatosPolizaLogistica dmu = new DatosPolizaLogistica();
+            ds = dmu.ConsultarDatos(Dtp_FechaInicio.Value.ToString("yyyyMMdd"), Dtp_FechaFin.Value.ToString("yyyyMMdd"));
+            Dgv_Poliza.DataSource = ds.Tables[0];
         }
     }
 }

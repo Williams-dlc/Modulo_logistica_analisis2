@@ -10,16 +10,29 @@ namespace CapaLogicaPolizaLogistica
 {
     public class LogicaPolizaLogistica
     {
-        public void ValidarInsertarDatosPoliza(string id, string fecha)
+        public void ValidarInsertarDatosPoliza(string id, string fecha, string tipo)
         {
             DatosPolizaLogistica dmu = new DatosPolizaLogistica();
-            if (id == "" || fecha == "")
+            if (id == "" || fecha == "" || tipo == "")
             {
-                MessageBox.Show("Porfavor Ingresa Todos los campos");
+                MessageBox.Show("Debe ingresar todos los campos");
             }
             else
             {
-                dmu.InsertarDatosDePoliza(id, fecha);
+                dmu.InsertarDatosDePoliza(id, fecha, tipo);
+            }
+        }
+
+        public void ValidarDatosPoliza(string inicio, string fin)
+        {
+            DatosPolizaLogistica dmu = new DatosPolizaLogistica();
+            if (inicio == "" || fin == "" )
+            {
+                MessageBox.Show("Debe ingresar las dos fechas");
+            }
+            else
+            {
+                dmu.ConsultarDatos(inicio, fin);
             }
         }
 
