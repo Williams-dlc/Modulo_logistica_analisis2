@@ -33,17 +33,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Btn_Cerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Lbl_Serie = new System.Windows.Forms.Label();
             this.Txt_StatusModelo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Lbl_Nombre = new System.Windows.Forms.Label();
+            this.Lbl_ID = new System.Windows.Forms.Label();
             this.Txt_Nombre = new System.Windows.Forms.TextBox();
             this.Txt_PK_id_modelo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Lbl_año = new System.Windows.Forms.Label();
+            this.Dtp_Año = new System.Windows.Forms.DateTimePicker();
             this.navegador1 = new CapaDiseno.Navegador();
+            this.Lbl_Modelo = new System.Windows.Forms.Label();
+            this.Cbo_Modelo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,15 +104,15 @@
             this.panel2.Size = new System.Drawing.Size(41, 41);
             this.panel2.TabIndex = 23;
             // 
-            // label4
+            // Lbl_Serie
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(141, 503);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 26);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Serie:";
+            this.Lbl_Serie.AutoSize = true;
+            this.Lbl_Serie.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Serie.Location = new System.Drawing.Point(141, 503);
+            this.Lbl_Serie.Name = "Lbl_Serie";
+            this.Lbl_Serie.Size = new System.Drawing.Size(69, 26);
+            this.Lbl_Serie.TabIndex = 14;
+            this.Lbl_Serie.Text = "Serie:";
             // 
             // Txt_StatusModelo
             // 
@@ -123,26 +123,26 @@
             this.Txt_StatusModelo.TabIndex = 13;
             this.Txt_StatusModelo.Tag = "3";
             // 
-            // label3
+            // Lbl_Nombre
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(105, 432);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 26);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Nombre:";
+            this.Lbl_Nombre.AutoSize = true;
+            this.Lbl_Nombre.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Nombre.Location = new System.Drawing.Point(105, 432);
+            this.Lbl_Nombre.Name = "Lbl_Nombre";
+            this.Lbl_Nombre.Size = new System.Drawing.Size(105, 26);
+            this.Lbl_Nombre.TabIndex = 12;
+            this.Lbl_Nombre.Text = "Nombre:";
             // 
-            // label2
+            // Lbl_ID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(108, 362);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 26);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Id Linea:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.Lbl_ID.AutoSize = true;
+            this.Lbl_ID.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_ID.Location = new System.Drawing.Point(108, 362);
+            this.Lbl_ID.Name = "Lbl_ID";
+            this.Lbl_ID.Size = new System.Drawing.Size(102, 26);
+            this.Lbl_ID.TabIndex = 11;
+            this.Lbl_ID.Text = "Id Linea:";
+            this.Lbl_ID.Click += new System.EventHandler(this.label2_Click);
             // 
             // Txt_Nombre
             // 
@@ -162,56 +162,54 @@
             this.Txt_PK_id_modelo.TabIndex = 9;
             this.Txt_PK_id_modelo.Tag = "1";
             // 
-            // label5
+            // Lbl_año
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(754, 356);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 26);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Año:";
+            this.Lbl_año.AutoSize = true;
+            this.Lbl_año.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_año.Location = new System.Drawing.Point(754, 356);
+            this.Lbl_año.Name = "Lbl_año";
+            this.Lbl_año.Size = new System.Drawing.Size(61, 26);
+            this.Lbl_año.TabIndex = 16;
+            this.Lbl_año.Text = "Año:";
             // 
-            // label6
+            // Dtp_Año
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(725, 432);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 26);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Modelo:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(852, 356);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(313, 26);
-            this.dateTimePicker1.TabIndex = 23;
-            this.dateTimePicker1.Tag = "4";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(852, 429);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(313, 28);
-            this.comboBox1.TabIndex = 24;
-            this.comboBox1.Tag = "5";
+            this.Dtp_Año.Location = new System.Drawing.Point(852, 356);
+            this.Dtp_Año.Name = "Dtp_Año";
+            this.Dtp_Año.Size = new System.Drawing.Size(313, 26);
+            this.Dtp_Año.TabIndex = 23;
+            this.Dtp_Año.Tag = "4";
             // 
             // navegador1
             // 
             this.navegador1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.navegador1.DataGr = null;
-            this.navegador1.Forma = this;
-            this.navegador1.Location = new System.Drawing.Point(3, 88);
+            this.navegador1.Location = new System.Drawing.Point(-1, 80);
             this.navegador1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.navegador1.Name = "navegador1";
             this.navegador1.Procedimiento = null;
             this.navegador1.pubNombrechm = null;
             this.navegador1.pubNombreHtml = null;
-            this.navegador1.Size = new System.Drawing.Size(1272, 70);
-            this.navegador1.TabIndex = 25;
+            this.navegador1.Size = new System.Drawing.Size(1286, 92);
+            this.navegador1.TabIndex = 27;
+            // 
+            // Lbl_Modelo
+            // 
+            this.Lbl_Modelo.AutoSize = true;
+            this.Lbl_Modelo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Modelo.Location = new System.Drawing.Point(738, 480);
+            this.Lbl_Modelo.Name = "Lbl_Modelo";
+            this.Lbl_Modelo.Size = new System.Drawing.Size(100, 26);
+            this.Lbl_Modelo.TabIndex = 20;
+            this.Lbl_Modelo.Text = "Modelo:";
+            // 
+            // Cbo_Modelo
+            // 
+            this.Cbo_Modelo.FormattingEnabled = true;
+            this.Cbo_Modelo.Location = new System.Drawing.Point(852, 478);
+            this.Cbo_Modelo.Name = "Cbo_Modelo";
+            this.Cbo_Modelo.Size = new System.Drawing.Size(313, 28);
+            this.Cbo_Modelo.TabIndex = 28;
             // 
             // InterfazMantenimientoMarca
             // 
@@ -219,15 +217,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
             this.ClientSize = new System.Drawing.Size(1288, 806);
+            this.Controls.Add(this.Cbo_Modelo);
+            this.Controls.Add(this.Lbl_Modelo);
             this.Controls.Add(this.navegador1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Dtp_Año);
+            this.Controls.Add(this.Lbl_año);
+            this.Controls.Add(this.Lbl_Serie);
             this.Controls.Add(this.Txt_StatusModelo);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Lbl_Nombre);
+            this.Controls.Add(this.Lbl_ID);
             this.Controls.Add(this.Txt_Nombre);
             this.Controls.Add(this.Txt_PK_id_modelo);
             this.Controls.Add(this.panel1);
@@ -244,20 +242,20 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Lbl_Serie;
         private System.Windows.Forms.TextBox Txt_StatusModelo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Lbl_Nombre;
+        private System.Windows.Forms.Label Lbl_ID;
         private System.Windows.Forms.TextBox Txt_Nombre;
         private System.Windows.Forms.TextBox Txt_PK_id_modelo;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Lbl_año;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Btn_Cerrar;
         private System.Windows.Forms.Button Btn_Minimizar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker Dtp_Año;
         private CapaDiseno.Navegador navegador1;
+        private System.Windows.Forms.Label Lbl_Modelo;
+        private System.Windows.Forms.ComboBox Cbo_Modelo;
     }
 }

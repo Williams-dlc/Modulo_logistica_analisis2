@@ -35,6 +35,7 @@ namespace MantenimientosLinea
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             new InterfazMantenimientoMarca(dataGridView1).Show();
+       
         }
     }
 }
