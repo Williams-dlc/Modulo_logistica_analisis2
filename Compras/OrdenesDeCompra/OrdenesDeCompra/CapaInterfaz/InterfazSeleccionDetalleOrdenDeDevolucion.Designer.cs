@@ -66,6 +66,7 @@
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -353,6 +354,7 @@
             this.Controls.Add(this.Txt_NDetalle);
             this.Controls.Add(this.label4);
             this.Name = "InterfazSeleccionDetalleOrdenDeDevolucion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.InterfazSeleccionDetalleOrdenDeDevolucion_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.label4, 0);

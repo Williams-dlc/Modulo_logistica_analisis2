@@ -12,7 +12,7 @@ namespace OrdenesDeCompra.CapaDatos
 {
     class CapaDatosCompras
     {
-
+        //  FUNCION QUE RETORNA UNA LISTA DE DATOS PARA CARGAR LOS COMBOBOX CON EL NOMBRE Y NO EL CODIGO (EJ. PROVEEDORES, PRODUTOS)
         public DataSet cargarCBBX(String tabla, String campoNombre)
         {
             DataSet ds = new DataSet();
@@ -41,7 +41,46 @@ namespace OrdenesDeCompra.CapaDatos
             return ds;
         }
 
+        /**/
+        public int existencias1(string codigo, string pk, string table)
+        {
+            String datos;
+            datos = "";
+            try
+            {
+                using (var conn = new OdbcConnection("dsn=colchoneria"))
+                {
+                    OdbcDataReader Reader;
+                    conn.Open();
+                    {
+                        using (var cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = "SELECT "+pk+" FROM "+table+" WHERE estatus= 0 AND "+pk+" = " + codigo + ";";
+                            Reader = cmd.ExecuteReader();
+                            while (Reader.Read())
+                            {
+                                datos = (Reader[pk].ToString());
+                            }
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString(), "ERROR");
+            }
 
+            if (datos == "")
+            {
+                return 0;
+            }else
+            {
+                return 1;
+            }
+        }
+
+        // FUNCION PARA EXTRAER EL CODIGO SEGUN EL NOMBRE
         public String ExtraerCodigos(String nombre, String Pk, String tabla, String nombreTabla)
         {
             string datos = "";
@@ -72,6 +111,35 @@ namespace OrdenesDeCompra.CapaDatos
             return datos;
         }
 
+            //FUNCION PARA ACTUALIZAR LOS TOTALES CUANDO SE INGRESA UN NUEVO DETALLE
+        public String ActualizarTotal(String valortotal, String Pk, String tabla, String pkvalue)
+        {
+            string datos = "";
+            try
+            {
+                using (var conn = new OdbcConnection("dsn=colchoneria"))
+                {
+                    conn.Open();
+
+                    {
+                        using (var cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = "UPDATE " + tabla + " SET `Total`= " + valortotal + " WHERE " + Pk + "= " + pkvalue + ";";
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Insertado");
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "ERROR");
+            }
+            return datos;
+        }
+
+        // FUNCION PARA CARGAR LOS DATOS DE PRODUCTO, ESTO PARA SABER QUE PRODUCTO SE SELECCIONA CUANDO SE CREA EL DETALLE
         public string[] cargarDatos1(string codigo)
         {
             string[] datos;
@@ -85,11 +153,11 @@ namespace OrdenesDeCompra.CapaDatos
                     {
                         using (var cmd = conn.CreateCommand())
                         {
-                            cmd.CommandText = "SELECT PK_Codigo_Producto, FK_Marca, FK_UnidadDeMedida, Precio FROM TBL_Producto WHERE estatus= 0 AND PK_Codigo_Producto = " + codigo + ";";
+                            cmd.CommandText = "SELECT PK_Codigo_Producto, FK_GrupoProductos, FK_UnidadDeMedida, Precio FROM TBL_Producto WHERE estatus= 0 AND PK_Codigo_Producto = " + codigo + ";";
                             Reader = cmd.ExecuteReader();
                             while (Reader.Read())
                             {
-                                datos[0] = (Reader["FK_Marca"].ToString());
+                                datos[0] = (Reader["FK_GrupoProductos"].ToString());
                                 datos[1] = (Reader["FK_UnidadDeMedida"].ToString());
                                 datos[2] = (Reader["Precio"].ToString());
                             }
@@ -105,6 +173,7 @@ namespace OrdenesDeCompra.CapaDatos
             return datos;
         }
 
+        // FUNCION QUE RETORNA LOS DATOS DEL DETALLE DE UN ENCABEZADO DE ORDEN DE COMPRA
         public DataSet ConsultarDatos(String codigo)
         {
             DataSet ds = new DataSet();
@@ -117,7 +186,8 @@ namespace OrdenesDeCompra.CapaDatos
                     {
                         using (var cmd = conn.CreateCommand())
                         {
-                            cmd.CommandText = "SELECT PK_Codigo_DetalleOrdenDeCompra as Codigo, FK_EncabezadoOrden as N_Orden, FK_Productos as Producto, Cantidad, Subtotal FROM TBL_OrdenDeCompraDetalle WHERE FK_EncabezadoOrden=" + codigo + ";"; OdbcDataAdapter m_datos = new OdbcDataAdapter(cmd);
+                            cmd.CommandText = "SELECT PK_Codigo_DetalleOrdenDeCompra as Codigo, FK_EncabezadoOrden as N_Orden, FK_Productos as Producto, Cantidad, Subtotal FROM TBL_OrdenDeCompraDetalle WHERE FK_EncabezadoOrden=" + codigo + ";";
+                            OdbcDataAdapter m_datos = new OdbcDataAdapter(cmd);
                             ds = new DataSet();
                             m_datos.Fill(ds);
                         }
@@ -132,6 +202,7 @@ namespace OrdenesDeCompra.CapaDatos
             return ds;
         }
 
+        // FUNCION QUE RETORNA LOS DATOS DEL DETALLE DE UN ENCABEZADO DE ORDEN DE DEVOLUCION
         public DataSet ConsultarDatos1(String codigo)
         {
             DataSet ds = new DataSet();
@@ -144,7 +215,8 @@ namespace OrdenesDeCompra.CapaDatos
                     {
                         using (var cmd = conn.CreateCommand())
                         {
-                            cmd.CommandText = "SELECT PK_Codigo_DetalleOrdenDeDevolucion as Codigo, FK_EncabezadoOrden as N_Orden, FK_Producto as Producto, Cantidad, Subtotal FROM TBL_OrdenDeDevolucionDetalle WHERE FK_EncabezadoOrden=" + codigo + ";"; OdbcDataAdapter m_datos = new OdbcDataAdapter(cmd);
+                            cmd.CommandText = "SELECT PK_Codigo_DetalleOrdenDeDevolucion as Codigo, FK_EncabezadoOrden as N_Orden, FK_Producto as Producto, Cantidad, Subtotal FROM TBL_OrdenDeDevolucionDetalle WHERE FK_EncabezadoOrden=" + codigo + ";";
+                            OdbcDataAdapter m_datos = new OdbcDataAdapter(cmd);
                             ds = new DataSet();
                             m_datos.Fill(ds);
                         }
@@ -159,7 +231,36 @@ namespace OrdenesDeCompra.CapaDatos
             return ds;
         }
 
+        // FUNCION QUE RETORNA LOS DATOS DEL DETALLE DE UN ENCABEZADO DE COTIZACION
+        public DataSet ConsultarDatos2(String codigo)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                using (var conn = new OdbcConnection("dsn=colchoneria"))
+                {
+                    conn.Open();
 
+                    {
+                        using (var cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = "SELECT PK_CotizacionOrden as Codigo, FK_CotizacionEncabezado as N_Orden, FK_Producto as Producto, Cantidad, Subtotal FROM TBL_CotizacionProveedores WHERE FK_CotizacionEncabezado=" + codigo + ";";
+                            OdbcDataAdapter m_datos = new OdbcDataAdapter(cmd);
+                            ds = new DataSet();
+                            m_datos.Fill(ds);
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return ds;
+        }
+
+        // FUNCION PARA INSERTAR DATOS DEL DETALLE DE UNA ORDEN DE COMPRA
         public void InsertarDatosDetalle(string codigo, string cantidad, string subtotal, string encabezado, string productos)
         {
             try
@@ -185,6 +286,7 @@ namespace OrdenesDeCompra.CapaDatos
             }
         }
 
+        // FUNCION PARA INSERTAR DATOS DEL DETALLE DE UNA ORDEN DE DEVOLUCION
         public void InsertarDatosDetalle1(string codigo, string cantidad, string subtotal, string encabezado, string productos)
         {
             try
@@ -210,6 +312,35 @@ namespace OrdenesDeCompra.CapaDatos
             }
         }
 
+
+        // FUNCION PARA INSERTAR DATOS DEL DETALLE DE UNA COTIZACION
+        public void InsertarDatosDetalle2(string codigo, string cantidad, string subtotal, string encabezado, string productos)
+        {
+            try
+            {
+                using (var conn = new OdbcConnection("dsn=colchoneria"))
+                {
+                    conn.Open();
+
+                    {
+                        using (var cmd = conn.CreateCommand())
+                        {
+
+                            cmd.CommandText = "INSERT INTO TBL_CotizacionProveedores (PK_CotizacionOrden, Cantidad, Subtotal, FK_CotizacionEncabezado, FK_Producto) VALUES('" + codigo + "', '" + cantidad + "', '" + subtotal + "', '" + encabezado + "', '" + productos + "'); ";
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Insertado");
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        // FUNCION PARA ELIMINAR DATOS DEL DETALLE DE UNA ORDEN DE COMPRA
         public void EliminarDatosDetalle(string codigoDetalle, string codigoOrden)
         {
             try
@@ -234,6 +365,8 @@ namespace OrdenesDeCompra.CapaDatos
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        // FUNCION PARA ELIMINAR DATOS DEL DETALLE DE UNA ORDEN DE DEVOLUCION
         public void EliminarDatosDetalle1(string codigoDetalle, string codigoOrden)
         {
             try
@@ -246,6 +379,33 @@ namespace OrdenesDeCompra.CapaDatos
                         using (var cmd = conn.CreateCommand())
                         {
                             cmd.CommandText = "DELETE FROM TBL_OrdenDeDevolucionDetalle WHERE PK_Codigo_DetalleOrdenDeDevolucion= " + codigoDetalle + " AND FK_EncabezadoOrden = " + codigoOrden + ";";
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Eliminado");
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+        // FUNCION PARA ELIMINAR DATOS DEL DETALLE DE UNA COTIZACION    
+        public void EliminarDatosDetalle2(string codigoDetalle, string codigoOrden)
+        {
+            try
+            {
+                using (var conn = new OdbcConnection("dsn=colchoneria"))
+                {
+                    conn.Open();
+
+                    {
+                        using (var cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = "DELETE FROM TBL_CotizacionProveedores WHERE PK_CotizacionOrden= " + codigoDetalle + " AND FK_CotizacionEncabezado = " + codigoOrden + ";";
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Eliminado");
                         }
