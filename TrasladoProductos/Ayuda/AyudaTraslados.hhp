@@ -1,0 +1,15 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=AyudaTraslados.chm
+Contents file=Table of Contents.hhc
+Default topic=ayuda.html
+Display compile progress=No
+Index file=Index.hhk
+Language=0x100a Español (Guatemala)
+
+
+[FILES]
+ayuda.html
+
+[INFOTYPES]
+
