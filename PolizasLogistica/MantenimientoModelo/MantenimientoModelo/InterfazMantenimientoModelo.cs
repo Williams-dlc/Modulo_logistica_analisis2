@@ -13,11 +13,12 @@ namespace MantenimientoModelo
 {
     public partial class InterfazMantenimientoModelos : Form
     {
-        Navegador nv = new Navegador();
+        Navegador nv2 = new Navegador();
         public InterfazMantenimientoModelos(DataGridView dataGridView1)
         {
             InitializeComponent();
-            nv.dgv_datos(dataGridView1);
+            nv2.nombreForm(this);
+            nv2.dgv_datos(dataGridView1);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace MantenimientoModelo
 
         private void InterfazMantenimientoModelos_Load(object sender, EventArgs e)
         {
-            nv.ingresarTabla("TBL_Modelo");
+            nv2.ingresarTabla("TBL_Modelo");
         }
 
         private void navegador2_Load(object sender, EventArgs e)

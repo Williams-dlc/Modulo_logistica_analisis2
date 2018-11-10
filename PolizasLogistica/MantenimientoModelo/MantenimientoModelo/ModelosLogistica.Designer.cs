@@ -34,7 +34,7 @@
             this.Btn_Cerrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Lbl_Models = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +99,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 237);
+            this.dataGridView1.Location = new System.Drawing.Point(69, 207);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1073, 432);
@@ -107,15 +107,15 @@
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
-            // label2
+            // Lbl_Models
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 38);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Modelos Logistica";
+            this.Lbl_Models.AutoSize = true;
+            this.Lbl_Models.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Models.Location = new System.Drawing.Point(62, 132);
+            this.Lbl_Models.Name = "Lbl_Models";
+            this.Lbl_Models.Size = new System.Drawing.Size(294, 38);
+            this.Lbl_Models.TabIndex = 2;
+            this.Lbl_Models.Text = "Modelos Logistica";
             // 
             // ModelosLogistica
             // 
@@ -123,7 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
             this.ClientSize = new System.Drawing.Size(1222, 806);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Lbl_Models);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -146,6 +146,6 @@
         private System.Windows.Forms.Button Btn_Minimizar;
         private System.Windows.Forms.Button Btn_Cerrar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Lbl_Models;
     }
 }

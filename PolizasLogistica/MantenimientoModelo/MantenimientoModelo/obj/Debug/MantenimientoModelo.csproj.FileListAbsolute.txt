@@ -70,3 +70,11 @@ D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\Manten
 D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\obj\Debug\MantenimientoModelo.csproj.GenerateResource.Cache
 D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\obj\Debug\MantenimientoModelo.dll
 D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\obj\Debug\MantenimientoModelo.pdb
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\bin\Debug\Logic.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\bin\Debug\Data.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\bin\Debug\RetornoCadenaDeConexion.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\bin\Debug\InicioSesion.dll
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\bin\Debug\Logic.pdb
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\bin\Debug\Data.pdb
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\bin\Debug\RetornoCadenaDeConexion.pdb
+D:\Valery\Documents\Universidad\Analisis\Fase 2\LOGISTICA\Segunda Entrega\MantenimientoModelo\MantenimientoModelo\bin\Debug\InicioSesion.pdb
