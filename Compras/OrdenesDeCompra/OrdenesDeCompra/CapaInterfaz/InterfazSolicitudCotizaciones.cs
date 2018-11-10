@@ -10,41 +10,37 @@ using OrdenesDeCompra.CapaDatos;
 
 namespace OrdenesDeCompra.CapaInterfaz
 {
-    public partial class InterfazSolicitudOrdenesDeCompra : PlantillaForms.Plantilla
+    public partial class InterfazSolicitudCotizaciones : PlantillaForms.Plantilla
     {
         Navegador nv = new Navegador();                                                     // CREACION DE INSTANCIA DEL NAVEGADOR
-        public InterfazSolicitudOrdenesDeCompra(DataGridView dg1)
+        public InterfazSolicitudCotizaciones(DataGridView dg1)
         {
             InitializeComponent();
             nv.nombreForm(this);
             nv.dgv_datos(dg1);
         }
 
-        private void InterfazSolicitudOrdenesDeCompra_Load(object sender, EventArgs e)
+        private void InterfazSolicitudCotizaciones_Load(object sender, EventArgs e)
         {
             CapaDatosCompras cd = new CapaDatosCompras();                                                   // INTANCIA DE LA CAPA DE DATOS                                               
-            nv.ingresarTabla("TBL_OrdenDeCompraEncabezado");                                                // CARGAR DATOS DE LA TABLA AL FORM
+            nv.ingresarTabla("TBL_CotizacionEncabezado");                                                // CARGAR DATOS DE LA TABLA AL FORM
             Txt_CodigoProveedor.Text = "";
-            Cbo_Proveedores.Text = "";  
-            DataSet dt = cd.cargarCBBX("TBL_Provedor", "Nombre");                                           // CARGAR EL COMBOBOX
-            Cbo_Proveedores.DataSource = dt.Tables[0].DefaultView;                                          
-            Cbo_Proveedores.ValueMember = "Nombre";
+            Cbo_Proveedores.Text = "";
+
+            /*NOTA IMPORTANTE. AUN NO ESTA IMPLEMENTADO LA SELECCION DE PROVEEDORES, POR ESO ESTA SECCION APARECE INHABILITADA EN EL FORM*/
+
             CapaDatosCompras cd2 = new CapaDatosCompras();                                       // INTANCIA A LA CAPA DE DATOS
             DataSet dt2 = cd2.cargarCBBX("TBL_Producto", "Descripcion_Producto");                 // CARGA DE COMBOBOX CON LOS NOMBRE DE LOS PRODUCTOS
             Cbb_productoD.DataSource = dt2.Tables[0].DefaultView;
             Cbb_productoD.ValueMember = "Descripcion_Producto";
-            if(cd.existencias1(Txt_NOrden.Text, "PK_NumeroOrden", "TBL_OrdenDeCompraEncabezado") == 1)
+            if (cd.existencias1(Txt_NOrden.Text, "PK_NumeroDeCotizacion", "TBL_CotizacionEncabezado") == 1)
             {
                 groupBox1.Enabled = true;
-            }else
+            }
+            else
             {
                 groupBox1.Enabled = false;
             }
-            //dateTimePicker1.Value = new DateTime(2001, 10, 20);
-        }
-
-        private void navegador1_MouseHover(object sender, EventArgs e)
-        {
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,30 +48,18 @@ namespace OrdenesDeCompra.CapaInterfaz
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-           // String.Format("{0:yyyy-MM-dd}", Txt_FOrden.Text);
-        }
-
-        private void Txt_FEntrega_TextChanged(object sender, EventArgs e)
-        {
-            //String.Format("{0:yyyy-MM-dd}", Txt_FEntrega.Text);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            InterfazSeleccionDetalleOrdenDeCompra form = new InterfazSeleccionDetalleOrdenDeCompra();       // ABRIR EL DETALLE
-            form.NOrden = Convert.ToInt32(Txt_NOrden.Text);                                                 // DARLE A LA VARIABLE DE NORDEN DEL FORM DE DETALLE EL VALOR DEL NUMERO DE ORDEN A UTILIZAR
-            form.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void Txt_NOrden_TextChanged(object sender, EventArgs e)
         {
             CapaDatosCompras cd = new CapaDatosCompras();                                   // INSTANCIA DE LA CAPA DE DATOS
             if (Txt_NOrden.Text != "")                                                      // HABILITACION O DESHABILITACION DEL BOTON DE DETALLE SEGUN EL NUMERO DE ORDEN
-            {       
+            {
                 DataSet ds;
-                ds = cd.ConsultarDatos(Txt_NOrden.Text);                                    // CARGA DEL DATAGRIDVIEW CON LOS DATOS DE LOS DEMAS DETALLES DE LA ORDEN
+                ds = cd.ConsultarDatos2(Txt_NOrden.Text);                                    // CARGA DEL DATAGRIDVIEW CON LOS DATOS DE LOS DEMAS DETALLES DE LA ORDEN
                 Dgv_detalle.DataSource = ds.Tables[0];
                 double suma = 0;
                 foreach (DataGridViewRow row in Dgv_detalle.Rows)
@@ -95,7 +79,7 @@ namespace OrdenesDeCompra.CapaInterfaz
                 this.Txt_total.Text = "0";                                                  // TOTAL EN CERO
             }
 
-            if (cd.existencias1(Txt_NOrden.Text, "PK_NumeroOrden", "TBL_OrdenDeCompraEncabezado") == 1)
+            if (cd.existencias1(Txt_NOrden.Text, "PK_NumeroDeCotizacion", "TBL_CotizacionEncabezado") == 1)
             {
                 groupBox1.Enabled = true;
             }
@@ -103,34 +87,6 @@ namespace OrdenesDeCompra.CapaInterfaz
             {
                 groupBox1.Enabled = false;
             }
-
-        }
-
-        private void Cbo_Proveedores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CapaDatosCompras cd = new CapaDatosCompras();                                                                       // CARGAR DATOS DEL PROVEEDOR
-            Txt_CodigoProveedor.Text = cd.ExtraerCodigos(Cbo_Proveedores.Text, "PK_codProveedor", "TBL_Provedor", "Nombre");
-        }
-
-        private void Txt_CodigoProveedor_TextChanged(object sender, EventArgs e)
-        {
-            CapaDatosCompras cd = new CapaDatosCompras();
-            Txt_CodigoProveedor.Text = cd.ExtraerCodigos(Cbo_Proveedores.Text, "PK_codProveedor", "TBL_Provedor", "Nombre");
-        }
-
-        private void Txt_Aprobacion_TextChanged(object sender, EventArgs e)
-        {
-            Txt_Aprobacion.Text = "0";                                                                                  // APROBACION DE LA ORDEN EN 0 = RECHAZADA, OTRO MODULO SE ENCARGARA DE ACEPTARLA O NO
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void Cbb_productoD_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,7 +100,7 @@ namespace OrdenesDeCompra.CapaInterfaz
 
 
             DataSet ds;                                                                                                                     // CARGA DE DATAGRID CON OTROS DETALLES DE LA MISMA ORDEN
-            ds = cd.ConsultarDatos(Txt_NOrden.Text);
+            ds = cd.ConsultarDatos2(Txt_NOrden.Text);
             Dgv_detalle.DataSource = ds.Tables[0];
         }
 
@@ -159,7 +115,6 @@ namespace OrdenesDeCompra.CapaInterfaz
             }
         }
 
-
         public void clean()                                                                                                                 // FUNCION DE LIMPIAR
         {
             Txt_NDetalle.Text = "";
@@ -167,15 +122,15 @@ namespace OrdenesDeCompra.CapaInterfaz
             Cbb_productoD.SelectedIndex = 0;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_guardar_Click(object sender, EventArgs e)
         {
             CapaDatosCompras cd = new CapaDatosCompras();                                                                                   // GUARDADO DE DATOS
-            cd.InsertarDatosDetalle(Txt_NDetalle.Text, Txt_Cantidad.Text, Txt_Subtotal.Text, Txt_NOrden.Text, Txt_CodigoP.Text);
+            cd.InsertarDatosDetalle2(Txt_NDetalle.Text, Txt_Cantidad.Text, Txt_Subtotal.Text, Txt_NOrden.Text, Txt_CodigoP.Text);
 
             clean();                                                                                                                        // FUNCION DE LIMPIAR 
 
             DataSet ds;                                                                                                                     // CARGA DEL DATAGRID DE DETALES
-            ds = cd.ConsultarDatos(Txt_NOrden.Text);
+            ds = cd.ConsultarDatos2(Txt_NOrden.Text);
             Dgv_detalle.DataSource = ds.Tables[0];
 
 
@@ -190,7 +145,7 @@ namespace OrdenesDeCompra.CapaInterfaz
             this.Txt_total.Text = Convert.ToString(suma);
 
             // GUARDADO DE DATOS
-            cd.ActualizarTotal(Txt_total.Text,"PK_NumeroOrden", "TBL_OrdenDeCompraEncabezado",Txt_NOrden.Text);
+            cd.ActualizarTotal(Txt_total.Text, "PK_NumeroDeCotizacion", "TBL_CotizacionEncabezado", Txt_NOrden.Text);
         }
 
         private void Dgv_detalle_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -205,9 +160,9 @@ namespace OrdenesDeCompra.CapaInterfaz
                 Id_reference2 = Convert.ToString(selectedRow.Cells[1].Value);
             }
             CapaDatosCompras cd = new CapaDatosCompras();                                                                                   // INSTANCIA A LA CAPA DE DATOS
-            cd.EliminarDatosDetalle(Id_reference, Id_reference2);                                                                            // LLAMADA A FUNCION DE ELIMINAR
+            cd.EliminarDatosDetalle2(Id_reference, Id_reference2);                                                                            // LLAMADA A FUNCION DE ELIMINAR
             DataSet ds;
-            ds = cd.ConsultarDatos(Txt_NOrden.Text);
+            ds = cd.ConsultarDatos2(Txt_NOrden.Text);
             Dgv_detalle.DataSource = ds.Tables[0];
 
 
@@ -225,37 +180,13 @@ namespace OrdenesDeCompra.CapaInterfaz
             cd.ActualizarTotal(Txt_total.Text, "PK_NumeroOrden", "TBL_OrdenDeCompraEncabezado", Txt_NOrden.Text);               /// ACTUALIZAR LOS TOTALES DEL ENCABEZADO
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             string fecha = dateTimePicker1.Value.Date.ToString("yyyy/MM/dd");                   //TOMAR LA FECHA DE UN DATE TIME Y PASARLO A UN TEXTBOX, ESTO PORQUE EL NAVEGADOR DA PROBLEMAS CON LOS DATETIMEPICKER
             Txt_fechaOrden.Text = fecha;
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-            string fecha = dateTimePicker2.Value.Date.ToString("yyyy/MM/dd");                   //TOMAR LA FECHA DE UN DATE TIME Y PASARLO A UN TEXTBOX, ESTO PORQUE EL NAVEGADOR DA PROBLEMAS CON LOS DATETIMEPICKER
-            Txt_fechaEntrega.Text = fecha;
-        }
-
         private void Txt_fechaOrden_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void Txt_fechaEntrega_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void Txt_fechaOrden_TextChanged_1(object sender, EventArgs e)
         {
             if (Txt_fechaOrden.Text != "")
             {
@@ -263,20 +194,6 @@ namespace OrdenesDeCompra.CapaInterfaz
                 string fecha1 = fecha.ToString("yyyy/MM/dd");
                 dateTimePicker1.Value = fecha;
             }
-        }
-
-        private void Txt_fechaEntrega_TextChanged_1(object sender, EventArgs e)
-        {
-            if (Txt_fechaEntrega.Text != "")
-            {
-                DateTime fecha = Convert.ToDateTime(Txt_fechaEntrega.Text);                           //ASIGNACION DEL TEXTBOX A UN DATETIMEPICKER
-                string fecha1 = fecha.ToString("yyyy/MM/dd");
-                dateTimePicker2.Value = fecha;
-            }
-        }
-
-        private void Dgv_detalle_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
         }
     }
 }

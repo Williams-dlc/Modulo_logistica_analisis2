@@ -1,6 +1,6 @@
 ﻿namespace OrdenesDeCompra.CapaInterfaz
 {
-    partial class InterfazConsultaOrdenesDeDevolucion
+    partial class InterfazConsultaCotizaciones
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -31,16 +31,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Dgv_Devoluciones = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Devoluciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
             // 
-            this.label11.Size = new System.Drawing.Size(237, 21);
-            this.label11.Text = "5503_Ordenes de Devolucion";
+            this.label11.Size = new System.Drawing.Size(154, 21);
+            this.label11.Text = "5505_Cotizaciones";
             // 
             // button2
             // 
@@ -57,7 +57,7 @@
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(71, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 1);
+            this.panel1.Size = new System.Drawing.Size(300, 1);
             this.panel1.TabIndex = 42;
             // 
             // label1
@@ -66,17 +66,17 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(70, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(500, 39);
+            this.label1.Size = new System.Drawing.Size(219, 39);
             this.label1.TabIndex = 41;
-            this.label1.Text = "Solicitud de Orden de Compra";
+            this.label1.Text = "Cotizaciones";
             // 
-            // Dgv_Devoluciones
+            // dataGridView1
             // 
-            this.Dgv_Devoluciones.AllowDrop = true;
-            this.Dgv_Devoluciones.AllowUserToOrderColumns = true;
-            this.Dgv_Devoluciones.AllowUserToResizeColumns = false;
-            this.Dgv_Devoluciones.AllowUserToResizeRows = false;
-            this.Dgv_Devoluciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(154)))), ((int)(((byte)(152)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,34 +84,33 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Devoluciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.Dgv_Devoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_Devoluciones.EnableHeadersVisualStyles = false;
-            this.Dgv_Devoluciones.Location = new System.Drawing.Point(77, 199);
-            this.Dgv_Devoluciones.Name = "Dgv_Devoluciones";
-            this.Dgv_Devoluciones.Size = new System.Drawing.Size(785, 407);
-            this.Dgv_Devoluciones.TabIndex = 40;
-            this.Dgv_Devoluciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Devoluciones_CellDoubleClick);
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(77, 199);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(785, 407);
+            this.dataGridView1.TabIndex = 40;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // InterfazConsultaOrdenesDeDevolucion
+            // InterfazConsultaCotizaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(933, 700);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Dgv_Devoluciones);
-            this.Name = "InterfazConsultaOrdenesDeDevolucion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.InterfazConsultaDevoluciones_Load);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "InterfazConsultaCotizaciones";
+            this.Load += new System.EventHandler(this.InterfazConsultaCotizaciones_Load);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.Dgv_Devoluciones, 0);
+            this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Devoluciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +120,6 @@
 
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.DataGridView Dgv_Devoluciones;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

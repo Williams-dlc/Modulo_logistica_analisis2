@@ -46,8 +46,6 @@
             this.Txt_Marca = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Dgv_detalle = new System.Windows.Forms.DataGridView();
-            this.Txt_UnidadBase = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Txt_Precio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,6 +71,7 @@
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -214,41 +213,19 @@
             this.Dgv_detalle.TabIndex = 47;
             this.Dgv_detalle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_detalle_CellDoubleClick);
             // 
-            // Txt_UnidadBase
-            // 
-            this.Txt_UnidadBase.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_UnidadBase.Location = new System.Drawing.Point(232, 96);
-            this.Txt_UnidadBase.Name = "Txt_UnidadBase";
-            this.Txt_UnidadBase.ReadOnly = true;
-            this.Txt_UnidadBase.Size = new System.Drawing.Size(578, 27);
-            this.Txt_UnidadBase.TabIndex = 49;
-            this.Txt_UnidadBase.Tag = "2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 21);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Unidad de Medida Base:";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Txt_Precio);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.Cbb_productoD);
-            this.groupBox1.Controls.Add(this.Txt_UnidadBase);
             this.groupBox1.Controls.Add(this.Txt_CodigoP);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.Txt_Marca);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(36, 205);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(827, 176);
+            this.groupBox1.Size = new System.Drawing.Size(827, 136);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
@@ -256,7 +233,7 @@
             // Txt_Precio
             // 
             this.Txt_Precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Precio.Location = new System.Drawing.Point(232, 129);
+            this.Txt_Precio.Location = new System.Drawing.Point(232, 96);
             this.Txt_Precio.Name = "Txt_Precio";
             this.Txt_Precio.ReadOnly = true;
             this.Txt_Precio.Size = new System.Drawing.Size(578, 27);
@@ -267,7 +244,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(165, 132);
+            this.label5.Location = new System.Drawing.Point(165, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 21);
             this.label5.TabIndex = 51;
@@ -432,6 +409,7 @@
             this.Controls.Add(this.Txt_NDetalle);
             this.Controls.Add(this.label4);
             this.Name = "InterfazSeleccionDetalleOrdenDeCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.InterfazSeleccionDetalleOrdenDeCompra_Load);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.Txt_NDetalle, 0);
@@ -468,8 +446,6 @@
        // public System.Windows.Forms.Panel panel1;
        // public System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView Dgv_detalle;
-        public System.Windows.Forms.TextBox Txt_UnidadBase;
-        public System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox Txt_NDetalle;
         public System.Windows.Forms.Label label4;
