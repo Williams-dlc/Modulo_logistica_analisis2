@@ -1,0 +1,4 @@
+C:\Users\josea\Documents\Visual Studio 2015\1. LOGISTICA\2. SUBMODULO B\DLL\DEV\MUESTREOAUDITORIA\Data\bin\Debug\Data.dll
+C:\Users\josea\Documents\Visual Studio 2015\1. LOGISTICA\2. SUBMODULO B\DLL\DEV\MUESTREOAUDITORIA\Data\bin\Debug\Data.pdb
+C:\Users\josea\Documents\Visual Studio 2015\1. LOGISTICA\2. SUBMODULO B\DLL\DEV\MUESTREOAUDITORIA\Data\obj\Debug\Data.dll
+C:\Users\josea\Documents\Visual Studio 2015\1. LOGISTICA\2. SUBMODULO B\DLL\DEV\MUESTREOAUDITORIA\Data\obj\Debug\Data.pdb
