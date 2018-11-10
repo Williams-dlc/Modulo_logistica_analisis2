@@ -5,10 +5,6 @@ C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventa
 C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\obj\Debug\dll_movimientoinventario.csproj.GenerateResource.Cache
 C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\dll_movimientoinventario.dll
 C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\dll_movimientoinventario.pdb
-C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\CapaDiseno.dll
-C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\CapaLogica.dll
-C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\DLL- Reporteador.dll
-C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\ConsultasInteligentes.dll
 C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\CapaDatos.dll
 C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\eddy\Desktop\asasasas\libreiamovimientoinventario\dll_movimientoinventario\dll_movimientoinventario\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.navegador1 = new CapaDiseno.Navegador();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Btn_Minimizar = new System.Windows.Forms.Button();
             this.lbl_titulo = new System.Windows.Forms.Label();
@@ -50,21 +49,9 @@
             this.txt_total = new System.Windows.Forms.TextBox();
             this.txt_costo = new System.Windows.Forms.TextBox();
             this.txt_estado_detalle = new System.Windows.Forms.TextBox();
+            this.navegador1 = new CapaDiseno.Navegador();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // navegador1
-            // 
-            this.navegador1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.navegador1.DataGr = null;
-            this.navegador1.Forma = null;
-            this.navegador1.Location = new System.Drawing.Point(2, 32);
-            this.navegador1.Name = "navegador1";
-            this.navegador1.Procedimiento = null;
-            this.navegador1.pubNombrechm = null;
-            this.navegador1.pubNombreHtml = null;
-            this.navegador1.Size = new System.Drawing.Size(857, 60);
-            this.navegador1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -267,17 +254,30 @@
             this.txt_estado_detalle.TabIndex = 15;
             this.txt_estado_detalle.Tag = "8";
             // 
+            // navegador1
+            // 
+            this.navegador1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.navegador1.DataGr = null;
+            this.navegador1.Forma = null;
+            this.navegador1.Location = new System.Drawing.Point(0, 32);
+            this.navegador1.Name = "navegador1";
+            this.navegador1.Procedimiento = null;
+            this.navegador1.pubNombrechm = null;
+            this.navegador1.pubNombreHtml = null;
+            this.navegador1.Size = new System.Drawing.Size(857, 60);
+            this.navegador1.TabIndex = 22;
+            // 
             // frm_mov_inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
             this.ClientSize = new System.Drawing.Size(859, 517);
+            this.Controls.Add(this.navegador1);
             this.Controls.Add(this.txt_estado_detalle);
             this.Controls.Add(this.txt_costo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txt_total);
-            this.Controls.Add(this.navegador1);
             this.Controls.Add(this.txt_precio);
             this.Controls.Add(this.cmb_enc_doc);
             this.Controls.Add(this.Txt_cantidad);
@@ -303,8 +303,6 @@
         }
 
         #endregion
-
-        private CapaDiseno.Navegador navegador1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Btn_Minimizar;
         private System.Windows.Forms.Label lbl_titulo;
@@ -326,5 +324,6 @@
         private System.Windows.Forms.Label lbl_detalle_bodega;
         private System.Windows.Forms.Label lbl_cod_producto;
         private System.Windows.Forms.Label lbl_id_enc_doc;
+        private CapaDiseno.Navegador navegador1;
     }
 }

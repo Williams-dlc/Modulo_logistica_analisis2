@@ -30,18 +30,23 @@ namespace dll_movimientoinventario
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            new frm_operaciones(dgv_movimientos).Show();
+            
         }
 
         private void frm_tabla_movimientos_Load(object sender, EventArgs e)
         {
-            DataTable tabla = nv.cargarDatos("TBL_Detalle_Doc_Invetario");
+            DataTable tabla = nv.cargarDatos("TBL_Detalle_Doc_Inventario");
             dgv_movimientos.DataSource = tabla;
         }
 
         private void dgv_movimientos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgv_movimientos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new frm_operaciones(dgv_movimientos).Show();
         }
     }
 }
